@@ -1,0 +1,62 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f8ff;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #2c3e50;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  li {
+    background: #fff;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #ccc;
+  }
+  .ejercicio {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  }
+  .ejercicio h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .ejercicio small {
+    font-size: 0.9em;
+    color: #666;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .ejercicio video {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+  
