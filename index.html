@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Entrenamiento Físico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- Enlace correcto al CSS externo -->
+  <style>
+    body {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #f7f8f9;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+
+    h7 {
+      display: block;
+      width: 80%;
+      max-width: 300px;
+      margin: 20px auto;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      background-color: #1a55df;
+      color: rgb(62, 55, 34);
+      box-shadow: 2px 2px 10px rgba(79, 5, 5, 0.2);
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button {
+      display: block;
+      width: 80%;
+      max-width: 300px;
+      margin: 20px auto;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      background-color: #111010;
+      color: white;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #111010;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="fondo-principal">
+  <h7>INICIACIÓN DEPORTIVA ESCOLAR</h7>
+  <button onclick="location.href='general.html'">Preparación Física General</button>
+  <button onclick="verificarAcceso()">Preparación Física Específica</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
