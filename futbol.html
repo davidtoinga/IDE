@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fútbol</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Comic Neue', cursive, sans-serif;
+      background: linear-gradient(to bottom, #a0e9ff, #ffffff);
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #0e4b8b;
+      text-align: center;
+    }
+
+    .ejercicio {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin: 20px auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .ejercicio h3 {
+      margin-top: 0;
+      color: #e67e22;
+    }
+
+    .ejercicio small {
+      display: block;
+      font-size: 14px;
+      margin: 3px 0;
+      color: #555;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 20px;
+      border: none;
+      background-color: #ff9800;
+      color: white;
+      cursor: pointer;
+      box-shadow: 3px 3px 6px #aaa;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #f57c00;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="fondo-futbol">
+  <h1>Ejercicios de Fútbol</h1>
+  <h2>Pase</h2>
+
+  <div class="ejercicio">
+    <h3>Pase corto entre conos</h3>
+    <small><strong>Edad:</strong> 8-12 años</small>
+    <small><strong>Objetivo:</strong> Mejorar la precisión del pase</small>
+    <small><strong>Descripción:</strong> Dos jugadores se pasan el balón entre conos</small>
+    <small><strong>Métodos:</strong> 10 pases con cada pie</small>
+    <small><strong>Recomendaciones:</strong> Usar el interior del pie</small>
+    <video controls src="videos/pase_corto.mp4"></video>
+  </div>
+
+  <div class="ejercicio">
+    <h3>Pase largo al compañero</h3>
+    <small><strong>Edad:</strong> 10-14 años</small>
+    <small><strong>Objetivo:</strong> Aumentar fuerza y distancia</small>
+    <small><strong>Descripción:</strong> Pase a 20 metros</small>
+    <small><strong>Métodos:</strong> 3 series de 8</small>
+    <small><strong>Recomendaciones:</strong> Usar empeine, seguir el pase</small>
+    <video controls src="videos/pase_largo.mp4"></video>
+  </div>
+
+  <div class="botonera">
+    <button onclick="location.href='especifica.html'">Volver</button>
+  </div>
+</body>
+</html>
+

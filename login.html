@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión - Área Específica</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Carga de Firebase (versión compat para facilitar la implementación) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+</head>
+<body class="fondo-especifica">
+  <h1>Acceso a Preparación Específica</h1>
+  <div class="login-box">
+    <input type="email" id="email" placeholder="Correo electrónico">
+    <input type="password" id="password" placeholder="Contraseña">
+    <button onclick="login()">Iniciar Sesión</button>
+    <p id="error-msg"></p>
+  </div>
+  <button onclick="location.href='index.html'">Volver al Menú Principal</button>
+
+  <!-- Incluye tu configuración y el script para login -->
+  <script src="firebase-config.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
