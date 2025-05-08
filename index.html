@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APP DE INICIACIÓN DEPORTIVA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000;
+      position: relative;
+    }
+
+    #video-fondo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.7;
+    }
+
+    .contenido {
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 40px 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      animation: entrada 1s ease forwards;
+      width: 90%;
+      max-width: 400px;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 6vw;
+      color: #ffffff;
+      text-shadow: 2px 2px 10px #000;
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-intro-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
+
+    .video-intro {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .boton-omitir {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      z-index: 1000;
+      backdrop-filter: blur(4px);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .boton-omitir:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 7vw;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 14px;
+      }
+
+      .contenido {
+        padding: 30px 15px;
+      }
+
+      .boton-omitir {
+        font-size: 11px;
+        padding: 6px 12px;
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Video de fondo -->
+  <video autoplay muted loop id="video-fondo">
+    <source src="videos/fondo.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+
+  <!-- Video General -->
+  <div class="video-intro-container" id="container-general">
+    <video id="intro-general" class="video-intro">
+      <source src="videos/intro_general.mp4" type="video/mp4">
+    </video>
+    <button class="boton-omitir" onclick="window.location.href='general.html'">⏭️ Omitir</button>
+  </div>
+
+  <!-- Video Específico -->
+  <div class="video-intro-container" id="container-especifico">
+    <video id="intro-especifico" class="video-intro">
+      <source src="videos/intro_especifico.mp4" type="video/mp4">
+    </video>
+    <button class="boton-omitir" onclick="window.location.href='login.html'">⏭️ Omitir</button>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="contenido" id="main-content">
+    <h1>Iniciación Deportiva Escolar</h1>
+    <button onclick="reproducirIntro('general')">💪 Preparación Física General</button>
+    <button onclick="reproducirIntro('especifico')">🏀 Preparación Física Específica</button>
+  </div>
+
+  <script>
+    function reproducirIntro(tipo) {
+      document.getElementById('main-content').style.display = 'none';
+      
+      if (tipo === 'general') {
+        const container = document.getElementById('container-general');
+        const video = document.getElementById('intro-general');
+        container.style.display = 'block';
+        video.play();
+        video.onended = () => window.location.href = 'general.html';
+      }
+
+      if (tipo === 'especifico') {
+        const container = document.getElementById('container-especifico');
+        const video = document.getElementById('intro-especifico');
+        container.style.display = 'block';
+        video.play();
+        video.onended = () => window.location.href = 'login.html';
+      }
+    }
+  </script>
+
+</body>
+</html>
