@@ -1,0 +1,197 @@
+/* Reglas base */
+html, body {
+  height: auto;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #edcf60;
+  overflow-x: hidden;
+  text-shadow:
+  -1px -1px 0 #000000,
+   1px -1px 0 #000000,
+  -1px  1px 0 #000000,
+   1px  1px 0 #000000;
+}
+
+/* Fondo por defecto */
+.fondo-default {
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+}
+
+/* Fondos con imágenes */
+.fondo-general,
+.fondo-futbol,
+.fondo-baloncesto,
+.fondo-especifica,
+.fondo-principal {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Fondo individual por sección */
+.fondo-general {
+  background-image: url('images/preparaciongeneral.jpeg');
+}
+
+.fondo-futbol {
+  background-image: url('images/futbol.avif');
+}
+
+.fondo-baloncesto {
+  background-image: url('images/curry.avif');
+}
+
+.fondo-especifica {
+  background-image: url('images/especifico.avif');
+}
+
+.fondo-principal {
+  background-image: url('images/principal.jpg');
+}
+
+/* Enmarcado personalizado */
+.enmarcado {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: rgb(48, 22, 22);
+  padding: 5px 15px;
+  border: 3px solid #171041;
+  background-color: #c9b7ac;
+  border-radius: 5px;
+  text-shadow:
+    -1px -1px 0 #f2eded,
+     1px -1px 0 #f2eded,
+    -1px  1px 0 #f2eded,
+     1px  1px 0 #f2eded;
+  margin-bottom: 10px;
+}
+
+/* Encabezados */
+h2 {
+  color: #00ff51;
+}
+
+/* Cuadro de ejercicios */
+.ejercicio {
+  background: white;
+  border: 3px solid #87cefa;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 700px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ejercicio h3 {
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+
+.ejercicio small {
+  display: block;
+  font-size: 0.9em;
+  margin: 3px 0;
+  color: #288fe2;
+}
+
+video {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+/* Botones */
+button, h7 {
+  background-color: #ff7675;
+  border: none;
+  padding: 12px 25px;
+  margin: 10px;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+button {
+  display: block;
+  width: 80%;
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  background-color: #111010;
+  color: white;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #d63031;
+}
+
+.botonera {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.seccion {
+  margin-bottom: 40px;
+}
+
+.login-box {
+  width: 80%;
+  max-width: 300px;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box input {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Video de fondo */
+#video-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+/* Contenedor del contenido */
+.contenido {
+  position: relative;
+  z-index: 2;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 16 / 9;
+  margin-top: 10px;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
