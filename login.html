@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión - Área Específica</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+</head>
+<body class="fondo-especifica">
+  <h1>Acceso a Preparación Específica</h1>
+
+  <div class="login-box">
+    <input type="email" id="email" placeholder="Correo electrónico" required>
+    <input type="password" id="password" placeholder="Contraseña" required>
+    <input type="text" id="codigo-descuento" placeholder="Código de descuento (opcional)">
+    <button onclick="loginYRegistrar()">Iniciar sesión</button>
+    <p id="error-msg"></p>
+  </div>
+
+  <button onclick="location.href='index.html'">Volver al Menú Principal</button>
+
+  <!-- Firebase Config -->
+  <script src="firebase-config.js"></script>
+
+  <script>
+    function loginYRegistrar() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const codigo = document.getElementById("codigo-descuento").value;
+      const errorMsg = document.getElementById("error-msg");
+
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(() => {
+          const user = firebase.auth().currentUser;
+
+          // Solo guardar si el usuario ingresó un código
+          if (codigo.trim() !== "") {
+            const userData = {
+              email: user.email,
+              code: codigo,
+              timestamp: new Date().toISOString()
+            };
+
+            firebase.database().ref("codigos-descuento").push(userData)
+              .then(() => {
+                // Después de guardar, redirige
+                window.location.href = "especifica.html";
+              })
+              .catch((error) => {
+                errorMsg.innerText = "Error al guardar el código: " + error.message;
+              });
+          } else {
+            // Si no hay código, simplemente redirige
+            window.location.href = "especifica.html";
+          }
+        })
+        .catch((error) => {
+          errorMsg.innerText = "Error: " + error.message;
+        });
+    }
+  </script>
+</body>
+</html>

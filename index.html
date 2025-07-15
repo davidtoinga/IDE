@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APP DE INICIACIÓN DEPORTIVA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #eee;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #000;
+      background-color: #ccc;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .boton {
+      width: 160px;
+      padding: 15px 10px;
+      border: 3px solid #000;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .boton:hover {
+      transform: scale(1.05);
+    }
+
+    .boton.general {
+      background-color: #f8e372;
+    }
+
+    .boton.especifica {
+      background-color: #58d3f7;
+    }
+
+    .frase {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #3b4cb4;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .video-banner {
+      margin-top: 20px;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+      background-color: #000;
+      z-index: 1;
+    }
+
+    .video-banner video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-intro-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
+
+    .video-intro {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .boton-omitir {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      z-index: 1000;
+      backdrop-filter: blur(4px);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .boton-omitir:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .boton {
+        width: 140px;
+        font-size: 0.9rem;
+        padding: 12px 8px;
+      }
+
+      .video-banner {
+        height: 200px;
+      }
+
+      .boton-omitir {
+        font-size: 11px;
+        padding: 6px 12px;
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>“BASK-ID”</h1>
+
+  <div class="botones">
+    <div class="boton general" onclick="reproducirIntro('general')">PREPARACIÓN FÍSICA<br>GENERAL</div>
+    <div class="boton especifica" onclick="reproducirIntro('especifico')">PREPARACIÓN FÍSICA<br>ESPECÍFICA</div>
+  </div>
+
+  <div class="frase">SUEÑA, VIVE</div>
+
+  <!-- Video visible en recuadro -->
+  <div class="video-banner">
+    <video autoplay muted loop>
+      <source src="videos/fondo.mp4" type="video/mp4" />
+      Tu navegador no soporta video HTML5.
+    </video>
+  </div>
+
+  <!-- Video transitorio General -->
+  <div class="video-intro-container" id="container-general">
+    <video id="intro-general" class="video-intro">
+      <source src="videos/intro_general.mp4" type="video/mp4" />
+    </video>
+    <button class="boton-omitir" onclick="window.location.href='general.html'">⏭️ Omitir</button>
+  </div>
+
+  <!-- Video transitorio Específico -->
+  <div class="video-intro-container" id="container-especifico">
+    <video id="intro-especifico" class="video-intro">
+      <source src="videos/intro_especifico.mp4" type="video/mp4" />
+    </video>
+    <button class="boton-omitir" onclick="window.location.href='login.html'">⏭️ Omitir</button>
+  </div>
+
+  <script>
+    function reproducirIntro(tipo) {
+      if (tipo === 'general') {
+        document.getElementById('container-general').style.display = 'block';
+        document.getElementById('intro-general').play();
+        document.getElementById('intro-general').onended = () => window.location.href = 'general.html';
+      }
+
+      if (tipo === 'especifico') {
+        document.getElementById('container-especifico').style.display = 'block';
+        document.getElementById('intro-especifico').play();
+        document.getElementById('intro-especifico').onended = () => window.location.href = 'login.html';
+      }
+    }
+  </script>
+
+</body>
+</html>
